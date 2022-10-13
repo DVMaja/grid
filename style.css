@@ -1,0 +1,60 @@
+body {    
+    background-color: antiquewhite;
+    margin: 0%;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+}
+
+/*Elemeket egymás mellé tesszük*/
+#container {
+    background-color: aquamarine;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    display: grid;
+    /*Rácsszerkezet kialakítása*/
+    grid-template-columns: 1fr 1fr 2fr; /*Garabntáltan egyforma 1fr vagy egyebek*/
+    gap: 10px;
+}
+.doboz {
+    padding: 10px 15px 10px 15px;
+    /*Vagy padding: 10 ->ekkor mindenhol 10 lesz*/    
+}
+
+div {
+    border: 2px solid gray;
+}
+
+img {
+    max-width: 300px;
+    width: 50%;
+}
+
+/*Töréspontok megadása*/
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: rgb(61, 212, 154);
+    }
+    #container {
+        max-width: 100%;
+        width: 100%;
+        font-size: 6vw;
+        grid-template-columns: 1fr 1fr;
+    }
+    /*.doboz{
+        height: 100vh; A képernyő magassága
+    }*/
+}
+
+/*Csökkenő sorrendbe írjuk ha max widthet használunk*/
+@media only screen and (max-width: 300px) {
+    #container {
+        background-color: brown;
+        color: blue;
+        font-size: 10vw;
+        /*A kijelző szélessége: 100vw*/
+        grid-template-columns: 1fr;
+    }
+}
